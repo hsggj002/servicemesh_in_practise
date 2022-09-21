@@ -1,0 +1,19 @@
+# curl 172.30.0.2:9901/runtime
+{
+ "layers": [
+  "static_layer_0",
+  "admin_layer_0"
+ ],
+ "entries": {
+  "health_check.min_interval": {
+   "layer_values": [
+    "5",
+    ""
+   ],
+   "final_value": "5"
+  }
+ }
+}
+21:50:17 root@pbj-ubuntu-test08:/usr/local/src/docker-envoy/cluster-manager/split 
+# curl -XPOST 'http://172.30.0.2:9901/runtime_modify?routing.traffic_split.myapp-v1.5=0&routing.traffic_split.myapp-v1.6=100'
+OK
